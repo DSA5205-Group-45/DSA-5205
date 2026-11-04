@@ -1,0 +1,9 @@
+# DSA5205 Project 2 environment (tested with Python 3.14.6 on Windows)
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+requests==2.34.2
+yfinance==1.7.0
+# report building only (build_report.py); also requires the pandoc binary on PATH
+xhtml2pdf==0.2.23

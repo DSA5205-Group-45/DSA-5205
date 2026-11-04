@@ -1,0 +1,64 @@
+{
+  "seed": 42,
+  "lambda_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0,
+    3000.0,
+    10000.0,
+    30000.0,
+    100000.0,
+    300000.0
+  ],
+  "lambda_selected": 30000.0,
+  "pi_max": 1.5,
+  "cost_per_turnover": 0.0001,
+  "gamma_ridge": 7.91758669015152,
+  "gamma_ar1": 10.659952428368005,
+  "gamma_mean": 8.780775431944333,
+  "mean_forecast_excess": 0.00036514647926988534,
+  "train_end": "2014-12-31",
+  "val_end": "2019-12-31",
+  "features": [
+    "ret_1",
+    "mom_5",
+    "mom_10",
+    "mom_21",
+    "vol_5",
+    "vol_21",
+    "ma_ratio_10",
+    "ma_ratio_50",
+    "ma_ratio_200",
+    "rsi_14",
+    "range_hl",
+    "vol_chg"
+  ],
+  "coefficients": {
+    "ret_1": -7.2e-05,
+    "mom_5": -9.4e-05,
+    "mom_10": -5e-05,
+    "mom_21": -3.5e-05,
+    "vol_5": -2.9e-05,
+    "vol_21": -1.9e-05,
+    "ma_ratio_10": -8.7e-05,
+    "ma_ratio_50": -3.4e-05,
+    "ma_ratio_200": -1.1e-05,
+    "rsi_14": -2.2e-05,
+    "range_hl": 3.6e-05,
+    "vol_chg": -2e-06
+  },
+  "intercept": 0.00036514647926988534,
+  "test_diagnostics": {
+    "avg_position_ridge": 0.5681747667632503,
+    "pct_days_long_ridge": 0.885131195335277,
+    "fixed_exposure_weight": 0.5681747667632503
+  },
+  "versions": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1"
+  }
+}

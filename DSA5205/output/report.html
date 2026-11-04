@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>DSA5205 Project 2 - Group_X</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+<style>
+@font-face { font-family: DejaVu; src: url('C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/fonts/DejaVuSans.ttf'); }
+@font-face { font-family: DejaVu; font-weight: bold;
+               src: url('C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/fonts/DejaVuSans-Bold.ttf'); }
+@font-face { font-family: DejaVu; font-style: italic;
+               src: url('C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/fonts/DejaVuSans-Oblique.ttf'); }
+@page { size: a4; margin: 2cm; }
+body { font-family: DejaVu, Helvetica, Arial, sans-serif; font-size: 9.5pt;
+       line-height: 1.45; color: #111; }
+h1 { font-size: 15pt; border-bottom: 1px solid #999; padding-bottom: 4px; }
+h2 { font-size: 12pt; margin-top: 18px; }
+h3 { font-size: 10.5pt; }
+img { max-width: 100%; }
+table { border-collapse: collapse; font-size: 8.5pt; margin: 8px 0; }
+th, td { border: 1px solid #888; padding: 3px 6px; text-align: center; }
+code { font-family: Courier New, monospace; font-size: 8.5pt;
+       background: #f2f2f2; }
+pre { background: #f6f6f6; border: 1px solid #ddd; padding: 6px;
+      font-size: 8pt; }
+.titleblock { text-align: center; margin-top: 120px; margin-bottom: 60px; }
+.titleblock h1 { border: none; font-size: 20pt; }
+blockquote { border-left: 3px solid #ccc; padding-left: 10px;
+             color: #444; }
+</style></head>
+<body>
+<header id="title-block-header">
+<h1 class="title">DSA5205 Project 2 - Group_X</h1>
+</header>
+<section id="daily-market-timing-on-spy-with-ridge-shrinkage"
+class="titleblock">
+<h1>Daily Market Timing on SPY with Ridge Shrinkage</h1>
+<h3
+id="dsa5205-project-2-design-validate-and-analyze-an-original-asset-trading-strategy">DSA5205
+Project 2 — Design, Validate, and Analyze an Original Asset Trading
+Strategy</h3>
+<p><strong>Group_X</strong> (Team name: <em>TBD</em>)</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Student ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Member 1</td>
+<td><em>TBD</em></td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 2</td>
+<td><em>TBD</em></td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 3</td>
+<td><em>TBD</em></td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 4</td>
+<td><em>TBD</em></td>
+<td><em>TBD</em></td>
+</tr>
+</tbody>
+</table>
+<p>National University of Singapore</p>
+<p>November 2026</p>
+</section>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="executive-summary">1. Executive summary</h2>
+<p>This project designs, validates, and analyzes a daily market-timing
+strategy on the SPDR S&amp;P 500 ETF (SPY). After each market close we
+forecast the next holding day’s <strong>excess</strong> return from
+twelve technical features — short-horizon momentum/reversal, realized
+volatility, moving-average deviations, RSI, intraday range, and volume
+change — using a ridge regression whose shrinkage penalty is selected on
+a strictly later validation window. The forecast is converted into a
+volatility-managed position, <span
+class="math inline"><em>π</em><sub><em>t</em></sub></span> = clip(<span
+class="math inline"><em>ŷ</em><sub><em>t</em></sub>/(<em>γ</em><em>σ̂</em><sub><em>t</em></sub><sup>2</sup>)</span>,
+−1.5, 1.5), executed at the <strong>next day’s open</strong> — never at
+the same close that produced the signal. Uninvested capital earns the
+T-bill rate, leverage borrows at it, and trades pay 1 basis point per
+unit of turnover.</p>
+<p>The procedure is built around leakage control and honest evaluation.
+Features use only information known at the decision close;
+standardization is fitted on the training window and applied forward;
+the shrinkage penalty is chosen on 2015–2019 validation data from a
+small pre-set grid of ten values; and the frozen configuration is then
+evaluated once on 2020–2026. Diagnostics computed after seeing the test
+results (cost/cap/long-only variants, a fixed-exposure benchmark, CAPM
+attribution) are reported separately as exploratory analysis and were
+not used to re-select anything.</p>
+<p>Headline out-of-sample results (2020-01-02 to 2026-10-28, 1,715
+trading days, net of costs): the ridge strategy earns 10.5% annualized
+with 12.3% volatility, a Sharpe ratio of 0.64, and a maximum drawdown of
+−14.1%, versus 15.1% / 19.1% / 0.69 / −32.1% for buy-and-hold SPY. It
+clearly beats an AR(1) forecast through the identical position rule
+(Sharpe 0.42, which loses 1.75% per year to costs). <strong>Attribution,
+however, tempers the story.</strong> A constant mean forecast through
+the same volatility-managed rule already achieves a Sharpe of 0.65, and
+a fixed 0.57× SPY exposure matches buy-and-hold’s Sharpe at much lower
+volatility: most of the strategy’s character comes from volatility
+management and lower average market exposure, not from the twelve
+features. A CAPM regression gives an annualized alpha of 1.8% with a
+Newey–West <span class="math inline"><em>t</em></span>-statistic of only
+0.59 — positive but statistically indistinguishable from zero. We
+therefore do not claim a robust market-timing alpha; the defensible
+findings are that shrinkage stabilizes a collinear weak-signal problem,
+that volatility-managed sizing reshapes the risk profile exactly as
+advertised (volatility cut by a third, drawdown more than halved), and
+that cost awareness changes model rankings.</p>
+<p>The report follows the project brief: markets and timing (§2), labels
+and features (§3), benchmarks (§4), model choice (§5), data split (§6),
+training (§7), validation (§8), the trading rule and costs (§9),
+out-of-sample evaluation (§10), attribution (§11), interpretation (§12),
+and reproducibility (§13).</p>
+<h2 id="markets-assets-timing-and-data-sources-brief-4.1">2. Markets,
+assets, timing, and data sources (brief §4.1)</h2>
+<p><strong>Asset.</strong> A single, highly liquid asset: the SPDR
+S&amp;P 500 ETF (SPY, NYSE Arca). SPY’s depth makes a 1 bp cost
+assumption and the absence of market-impact modeling defensible at our
+position sizes (notional capped at 1.5× equity), and a single-asset
+design keeps the whole pipeline transparent.</p>
+<p><strong>Frequency and trading times.</strong> Daily. The decision is
+made <strong>after the close of day <span
+class="math inline"><em>t</em></span></strong>, using only information
+available up to and including that close. Because the closing price and
+the day’s full OHLCV are not knowable before the close, we do
+<strong>not</strong> assume execution at that same close: the order is
+executed at the <strong>open of day <span
+class="math inline"><em>t</em> + 1</span></strong> (the first genuinely
+executable price), and the position is held from open <span
+class="math inline"><em>t</em> + 1</span> to open <span
+class="math inline"><em>t</em> + 2</span>. The label in §3 is built to
+match this holding period exactly.</p>
+<p><strong>Calendar and currency.</strong> US exchange calendar (NYSE
+trading days), USD throughout, no FX considerations.</p>
+<p><strong>Investable benchmark.</strong> Buy-and-hold SPY, plus the
+forecast-based and risk-matched benchmarks of §4.</p>
+<p><strong>Data sources (lawful, public).</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Series</th>
+<th>Source</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPY daily OHLCV</td>
+<td>Yahoo Finance chart API (via <code>requests</code>;
+<code>yfinance</code> as fallback)</td>
+<td>split- and dividend-adjusted (total-return) OHLC</td>
+</tr>
+<tr>
+<td>3-month T-bill rate</td>
+<td>FRED series DTB3; Yahoo <code>^IRX</code> (13-week T-bill yield) as
+fallback</td>
+<td>annualized percent, converted to a daily rate</td>
+</tr>
+</tbody>
+</table>
+<p>Yahoo’s adjusted series is backward-adjusted: historical prices are
+multiplied by the product of split and dividend factors so returns are
+continuous across corporate actions. Our fetch script
+(<code>code/fetch_data.py</code>) pulls the adjusted close together with
+raw OHLC, rescales the OHLC block by the same adjustment factor, and
+runs verification checks per the Appendix B checklist of the brief: no
+duplicated dates, no non-positive prices, and zero days with <span
+class="math inline">|<em>r</em><sub><em>t</em></sub>| &gt; 25%</span>
+over 5,641 observations (2004-06-01 to 2026-10-30); in addition, a
+<strong>per-event check</strong> on the two most recent cash dividends
+confirms that the vendor’s adjusted return on each ex-date matches the
+manual total return <span
+class="math inline">(<em>P</em><sub><em>e</em><em>x</em></sub> + <em>D</em>)/<em>P</em><sub><em>p</em><em>r</em><em>e</em><em>v</em></sub> − 1</span>
+to within <span class="math inline">3 × 10<sup>−5</sup></span> (residual
+from cent-level rounding). The data-safety logic downloads and validates
+both series before atomically replacing the cache, so a failed download
+can never corrupt a valid one. The risk-free leg of the cached run uses
+Yahoo <code>^IRX</code> because the FRED endpoint was unreachable from
+our network at fetch time; the two quote the same instrument, and the
+script tries FRED first on every run. All analysis uses historical data
+only; no live trading of any kind is involved.</p>
+<h2 id="labels-and-features-brief-4.2">3. Labels and features (brief
+§4.2)</h2>
+<p><strong>Label.</strong> The prediction target is the excess return
+over the actual holding period. With execution at open <span
+class="math inline"><em>t</em> + 1</span> and a one-day holding
+period,</p>
+<blockquote>
+<p><span class="math inline"><em>y</em><sub><em>t</em></sub></span> =
+<span
+class="math inline"><em>O</em><em>p</em><em>e</em><em>n</em><sub><em>t</em> + 2</sub>/<em>O</em><em>p</em><em>e</em><em>n</em><sub><em>t</em> + 1</sub> − 1</span>,
+label in excess form: <span
+class="math inline"><em>y</em><sub><em>t</em></sub> − <em>r</em><sub><em>f</em>, <em>t</em></sub></span>,</p>
+</blockquote>
+<p>where <span
+class="math inline"><em>r</em><sub><em>f</em>, <em>t</em></sub></span>
+is the daily T-bill accrual known at close <span
+class="math inline"><em>t</em></span>. Features at close <span
+class="math inline"><em>t</em></span> therefore always predict a return
+that starts strictly after the decision, and the strategy’s realized
+P&amp;L in §9–§10 is computed over exactly these open-to-open intervals.
+We model the <em>excess</em> return so that the label, the position rule
+(a mean-variance ratio of expected excess return to variance), and the
+Sharpe accounting all use one consistent quantity.</p>
+<p><strong>Features.</strong> Twelve features, all computable at the
+close of day <span class="math inline"><em>t</em></span>, in four
+groups.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Definition</th>
+<th>Lookback</th>
+<th>Why it might help</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ret_1</code></td>
+<td>close-to-close <span
+class="math inline"><em>r</em><sub><em>t</em></sub></span></td>
+<td>1 d</td>
+<td>daily reversal/momentum</td>
+</tr>
+<tr>
+<td><code>mom_5</code>, <code>mom_10</code>, <code>mom_21</code></td>
+<td><span
+class="math inline"><em>P</em><sub><em>t</em></sub>/<em>P</em><sub><em>t</em> − <em>k</em></sub> − 1</span></td>
+<td>1–4 wk</td>
+<td>short-horizon trend</td>
+</tr>
+<tr>
+<td><code>vol_5</code>, <code>vol_21</code></td>
+<td>rolling std of <span class="math inline"><em>r</em></span></td>
+<td>1 wk / 1 mo</td>
+<td>volatility state; risk scaling</td>
+</tr>
+<tr>
+<td><code>ma_ratio_10/50/200</code></td>
+<td><span
+class="math inline"><em>P</em><sub><em>t</em></sub>/MA<sub><em>k</em></sub> − 1</span></td>
+<td>2 wk–10 mo</td>
+<td>distance from trend; overextension</td>
+</tr>
+<tr>
+<td><code>rsi_14</code></td>
+<td>14-day RSI</td>
+<td>2 wk</td>
+<td>classic overbought/oversold gauge</td>
+</tr>
+<tr>
+<td><code>range_hl</code></td>
+<td><span
+class="math inline">(<em>H</em><sub><em>t</em></sub> − <em>L</em><sub><em>t</em></sub>)/<em>P</em><sub><em>t</em></sub></span></td>
+<td>1 d</td>
+<td>intraday stress / realized range</td>
+</tr>
+<tr>
+<td><code>vol_chg</code></td>
+<td><span class="math inline">log <em>V</em><sub><em>t</em></sub></span>
+− 21-day mean of <span class="math inline">log <em>V</em></span></td>
+<td>1 mo</td>
+<td>abnormal attention / volume</td>
+</tr>
+</tbody>
+</table>
+<p><em>Momentum/reversal</em> features are motivated by the literature
+on short-horizon return autocorrelation (liquidity-provision reversal at
+daily horizons). <em>Volatility</em> features capture the persistence of
+the variance process, used both as predictor and as the denominator of
+the position rule. <em>Trend-deviation</em> features proxy for how
+stretched price is relative to its recent path; <em>range/volume</em>
+proxy for intraday stress and attention.</p>
+<p><strong>Known at decision time.</strong> Every feature is a
+deterministic function of OHLCV at or before close <span
+class="math inline"><em>t</em></span>; row <span
+class="math inline"><em>t</em></span> (features) predicts the open <span
+class="math inline"><em>t</em> + 1</span> → open <span
+class="math inline"><em>t</em> + 2</span> return. No quantity revealed
+after the decision close is used — including for execution, which is
+deferred to the next open.</p>
+<p><strong>Scaling.</strong> Features are z-scored with mean and
+standard deviation <strong>fitted on the training window only</strong>,
+then applied unchanged to validation and (after refitting on
+train+validation) to test. The scaler never sees the period it is
+applied to.</p>
+<p><strong>Cleaning.</strong> SPY is clean and liquid; we (i) drop rows
+with missing OHLCV, (ii) verify no duplicated dates and no non-positive
+prices, (iii) verify no single-day moves beyond ±25% (none occur), and
+(iv) drop the initial 200 trading days consumed by the longest lookback
+(plus the two trailing days consumed by the label). No winsorization:
+extreme days such as the COVID crash are genuine market data that the
+risk scaling should react to, not outliers to erase. Missing risk-free
+quotes (holidays) are forward-filled.</p>
+<h2 id="benchmarks-brief-4.3">4. Benchmarks (brief §4.3)</h2>
+<p>Five references, all over the identical test dates and — where
+applicable — the identical position rule and cost model:</p>
+<ol type="1">
+<li><strong>Buy-and-hold SPY</strong> — the investable alternative a
+real investor could hold.</li>
+<li><strong>AR(1) forecast baseline</strong> — OLS of the excess label
+on <code>ret_1</code> only, refit on the same training data, put through
+the <em>same</em> volatility-managed position rule with its own
+training-calibrated risk scaler. Isolates the value of the multivariate
+ridge signal over the simplest time-series forecast.</li>
+<li><strong>Mean forecast + volatility management</strong> — a
+<em>constant</em> forecast (the training mean excess return) through the
+identical position rule. This is the key attribution benchmark: any gap
+between the ridge strategy and this row is the incremental value of the
+twelve features; the row itself captures the value of volatility-managed
+sizing alone.</li>
+<li><strong>Fixed-exposure benchmark (exploratory)</strong> — a constant
+SPY weight equal to the ridge strategy’s average test exposure (0.568),
+with the same cash accounting. Because it is calibrated on test
+information, it is reported as an exploratory diagnostic only: it checks
+whether the strategy’s risk profile simply reflects holding less
+market.</li>
+<li><strong>Recursive historical mean</strong> — the expanding mean of
+the excess label using only labels fully realized by close <span
+class="math inline"><em>t</em></span> (labels through <span
+class="math inline"><em>t</em> − 2</span>), the Campbell–Thompson style
+naive reference for <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup></span>
+= <span
+class="math inline">1 − ∑(<em>y</em><sub><em>t</em></sub> − <em>ŷ</em><sub><em>t</em></sub>)<sup>2</sup>/∑(<em>y</em><sub><em>t</em></sub> − <em>ȳ</em><sub><em>t</em></sub>)<sup>2</sup></span>.</li>
+</ol>
+<h2 id="model-choice-and-overfitting-control-brief-4.4">5. Model choice
+and overfitting control (brief §4.4)</h2>
+<p><strong>Economic story.</strong> At the daily horizon the market’s
+conditional expected excess return is driven by many weak forces at
+once: liquidity-driven reversal after large moves, short trend
+continuation, the volatility state, and how stretched prices are
+relative to trend. No single feature is reliable — daily predictability
+is famously faint — but a weighted combination of weak, correlated
+signals may still carry information, <em>provided</em> the estimation
+noise in the weights is controlled.</p>
+<p><strong>Why ridge.</strong> The twelve features are highly collinear
+(momentum, moving-average, and RSI features all load on recent returns).
+OLS on collinear features has large coefficient variance, which at daily
+signal-to-noise ratios turns into unstable forecasts and — after
+position sizing — wasteful turnover. Ridge adds an <span
+class="math inline"><em>ℓ</em><sub>2</sub></span> penalty <span
+class="math inline"><em>λ</em>∥<em>β</em>∥<sup>2</sup></span> that pulls
+coefficients toward zero, trading a small bias for a large variance
+reduction. This is the classic bias–variance trade-off: with many
+correlated weak predictors and a low signal-to-noise ratio, shrinking
+the coefficients reduces estimation error and stabilizes both the
+forecast and the resulting trades. The dense-weight assumption of ridge
+(many small contributions) matches our story better than a sparse
+selector, which suits settings where only a handful of predictors matter
+at a time (the one-minute cross-sectional setting of Chinco,
+Clark-Joseph, and Ye, 2019).</p>
+<p><strong>Scope note on the “virtue of complexity”.</strong> Kelly,
+Malamud, and Zhou (2024) show that expected out-of-sample timing
+performance can <em>rise</em> with model complexity under proper
+shrinkage — but their result is proved in a high-dimensional regime
+(thousands of generated features, dense roughly isotropic signals,
+sufficient mixing). Our model has twelve hand-picked, highly correlated
+features and ~2,500 training observations, which is decidedly not that
+regime, and we do not claim our results validate their theory. What our
+experiment does support is the narrower, standard point: under low
+signal-to-noise and collinearity, ridge shrinkage reduces forecast and
+trading instability relative to unpenalized estimation (see the
+validation curve in §8). We deliberately do not add random features or a
+nonlinear model to chase the high-complexity regime: with ~2,500
+training days the added flexibility would mostly fit noise, and the
+linear model keeps the coefficient table (§12) directly
+interpretable.</p>
+<p><strong>Overfitting control.</strong> Four mechanisms, layered:</p>
+<ol type="1">
+<li><strong>Shrinkage</strong>, with <span
+class="math inline"><em>λ</em></span> selected out of sample on
+validation (§8), not in sample.</li>
+<li><strong>A small, fixed feature set</strong> — twelve interpretable
+features chosen once, before any fitting.</li>
+<li><strong>A single chronological train/validation/test split, used in
+order</strong> (§6).</li>
+<li><strong>Position caps and volatility scaling</strong> — even a wrong
+forecast cannot produce an unbounded bet: <span
+class="math inline">|<em>π</em><sub><em>t</em></sub>| ≤ 1.5</span>, and
+positions shrink automatically when realized variance rises (§9).</li>
+</ol>
+<h2 id="data-period-split-and-test-discipline-brief-4.5">6. Data period,
+split, and test discipline (brief §4.5)</h2>
+<p>The raw download covers 2004-06-01 to 2026-10-30; after the 200-day
+lookback features and the two-day-ahead label, the usable sample is
+<strong>2005-03-18 to 2026-10-28 (5,435 observations)</strong>, split
+chronologically:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Split</th>
+<th>Period (actual decision dates)</th>
+<th>Days</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training</td>
+<td>2005-03-18 – 2014-12-30</td>
+<td>2,463</td>
+<td>fit scaler, ridge, AR(1); calibrate <span
+class="math inline"><em>γ</em></span></td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>2015-01-02 – 2019-12-30</td>
+<td>1,257</td>
+<td>select <span class="math inline"><em>λ</em></span> (the only
+hyperparameter)</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>2020-01-02 – 2026-10-28</td>
+<td>1,715</td>
+<td>confirmatory out-of-sample evaluation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Leakage control.</strong> Nothing fitted on later data is
+used on earlier data: (i) the standardizer is fitted on the training
+window (train+validation for the final model) and applied forward; (ii)
+the recursive naive forecast uses only labels fully realized by the
+decision date (through <span class="math inline"><em>t</em> − 2</span>);
+(iii) <span class="math inline"><em>γ</em></span> is calibrated on the
+fitting sample only; (iv) the label starts at the next day’s open, so no
+same-close execution assumption is involved. In addition,
+<strong>boundary rows</strong>: because the label of decision day <span
+class="math inline"><em>t</em></span> is only realized at the open of
+<span class="math inline"><em>t</em> + 2</span>, every fit and
+model-selection sample is restricted to rows whose stored
+<code>label_end_date</code> is on or before the first out-of-sample
+decision date — this removes exactly one boundary row per split
+(2014-12-31 from training, 2019-12-31 from validation and from the final
+fitting sample), enforced by assertions in
+<code>code/run_backtest.py::split_dataset</code> and by
+<code>code/test_backtest.py</code>.</p>
+<p><strong>Test discipline — confirmatory vs exploratory
+analysis.</strong> The <strong>confirmatory</strong> analysis is a
+single evaluation of the frozen configuration (features, <span
+class="math inline"><em>λ</em></span> from validation, <span
+class="math inline"><em>γ</em></span>, position rule, 1 bp cost) on the
+test window. After seeing those results we ran
+<strong>exploratory</strong> diagnostics — the fixed-exposure benchmark,
+CAPM attribution, and the cost/cap/long-only variants of Appendix D — to
+understand <em>where</em> performance comes from. These diagnostics use
+test information and are labelled exploratory wherever they appear; none
+was used to re-select the model, and we do not describe the test window
+as “untouched”. Had we changed the strategy on the basis of these
+diagnostics, the same period could no longer serve as an honest test
+set.</p>
+<h2 id="training-brief-4.6">7. Training (brief §4.6)</h2>
+<p><strong>Method.</strong> Ridge is fitted in closed form, <span
+class="math inline"><em>β̂</em> = (<em>X</em><sup>⊤</sup><em>X</em> + <em>λ</em><em>I</em>)<sup>−1</sup><em>X</em><sup>⊤</sup><em>y</em></span>,
+via <code>sklearn.linear_model.Ridge</code> (unpenalized intercept,
+pre-standardized features), with the excess label as the target. The
+AR(1) baseline is OLS via
+<code>sklearn.linear_model.LinearRegression</code> on
+<code>ret_1</code>. Training is deterministic up to floating-point
+order.</p>
+<p><strong>Protocol.</strong> For validation, scaler and ridge are
+fitted on 2005–2014 and scored on 2015–2019 for each <span
+class="math inline"><em>λ</em></span> in the grid. For the final test,
+scaler and ridge are <strong>refitted on 2005–2019</strong> with the
+selected <span class="math inline"><em>λ</em></span>, then frozen.</p>
+<p><strong>Reproducibility.</strong> Seed 42 is fixed (the pipeline is
+deterministic; the seed is set defensively). Versions recorded in
+<code>output/results/run_config.json</code>: Python 3.14.6, numpy 2.5.3,
+pandas 3.0.6, scikit-learn 1.9.1. The grid, selected <span
+class="math inline"><em>λ</em></span>, fitted coefficients, <span
+class="math inline"><em>γ</em></span> values, caps, and cost are stored
+in the same file; every number in this report regenerates via the
+commands in §13.</p>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="validation-and-model-selection-brief-4.7">8. Validation and
+model selection (brief §4.7)</h2>
+<p><strong>Method.</strong> A single time-respecting forward split: fit
+on 2005–2014, evaluate on 2015–2019. Forward validation respects time
+order — unlike random-fold cross-validation it never fits on the future
+to predict the past — and mimics live use (fit on the past, apply to the
+next period).</p>
+<p><strong>Search.</strong> A small, pre-set grid of
+<strong>ten</strong> ridge penalties, <span
+class="math inline"><em>λ</em> ∈ {0.1, 1, 10, 100, 10<sup>3</sup>, 3 × 10<sup>3</sup>, 10<sup>4</sup>, 3 × 10<sup>4</sup>, 10<sup>5</sup>, 3 × 10<sup>5</sup>}</span>
+— ten models tried in total, nothing else tuned. <strong>Selection rule
+(defined in advance):</strong> the <span
+class="math inline"><em>λ</em></span> with the highest validation Sharpe
+of the net-of-cost strategy.</p>
+<p><img src="C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/figures/fig4_lambda_selection.png" /></p>
+<p><em>Figure 4. Validation-based model selection. Left axis: validation
+strategy Sharpe (net of costs). Right axis: validation OOS <span
+class="math inline"><em>R</em><sup>2</sup></span> vs the recursive-mean
+naive forecast. Strong shrinkage dominates; the Sharpe-optimal penalty
+is <span
+class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span>.</em></p>
+<p>Lightly penalized models (<span
+class="math inline"><em>λ</em> ≤ 100</span>) are <em>worse</em> than
+doing nothing on validation (Sharpe ≈ 0 or negative, <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup> &lt; 0</span>):
+without shrinkage the collinear features produce noisy forecasts, and
+the position rule converts noise into turnover and costs. Performance
+rises monotonically with <span class="math inline"><em>λ</em></span> up
+to <span class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span>
+(validation Sharpe 0.76, annualized return 11.1% at 13.8% volatility)
+and flattens beyond. This is the textbook bias–variance trade-off: with
+weak collinear predictors, heavy shrinkage is the main defence against
+overfitting. The selected model is <strong><span
+class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span></strong>, an
+interior optimum of the grid.</p>
+<h2 id="from-predictions-to-positions-brief-4.8">9. From predictions to
+positions (brief §4.8)</h2>
+<p><strong>Score-to-weight rule.</strong> The excess-return forecast is
+converted into a position by a volatility-managed (mean-variance style)
+rule:</p>
+<blockquote>
+<p><span class="math inline"><em>π</em><sub><em>t</em></sub></span> =
+clip( <span class="math inline"><em>ŷ</em><sub><em>t</em></sub></span> /
+( <span
+class="math inline"><em>γ</em> ⋅ <em>σ̂</em><sub>21, <em>t</em></sub><sup>2</sup></span>
+), −1.5, +1.5 ),</p>
+</blockquote>
+<p>where <span
+class="math inline"><em>ŷ</em><sub><em>t</em></sub></span> is the ridge
+forecast of the holding-day excess return and <span
+class="math inline"><em>σ̂</em><sub>21, <em>t</em></sub><sup>2</sup></span>
+is the 21-day realized variance known at close <span
+class="math inline"><em>t</em></span>. This is the mean-variance/Kelly
+logic (Moreira–Muir style volatility management): position proportional
+to expected excess return, inversely proportional to variance. The
+risk-aversion analogue <span class="math inline"><em>γ</em></span> is
+calibrated on the <strong>training data only</strong> so that the
+average absolute <em>pre-clip</em> position <span
+class="math inline">|<em>ŷ</em>/(<em>γ</em><em>σ̂</em><sup>2</sup>)|</span>
+equals 1 there; the ±1.5 cap is applied afterwards, so the realized mean
+<span class="math inline">|<em>π</em>|</span> can be below 1 (<span
+class="math inline"><em>γ</em><sub>ridge</sub> = 7.92</span>, <span
+class="math inline"><em>γ</em><sub>AR(1)</sub> = 10.66</span>, <span
+class="math inline"><em>γ</em><sub>mean</sub> = 8.78</span>). <span
+class="math inline"><em>γ</em></span> is then held fixed out of sample.
+The <span class="math inline">±1.5</span> cap bounds leverage at 1.5×
+and permits shorts — a simple, stated risk limit.</p>
+<p><strong>Cash, financing, and short accounting.</strong> The position
+<span class="math inline"><em>π</em><sub><em>t</em></sub></span> is the
+fraction of equity in SPY; the remaining <span
+class="math inline">1 − <em>π</em><sub><em>t</em></sub></span> earns the
+T-bill rate. Leverage above 1× borrows at the T-bill rate; short
+positions invest the proceeds at the T-bill rate. The portfolio return
+over the holding day is therefore</p>
+<blockquote>
+<p><span
+class="math inline"><em>r</em><sub><em>p</em>, <em>t</em></sub></span> =
+<span
+class="math inline"><em>r</em><sub><em>f</em>, <em>t</em></sub></span> +
+<span
+class="math inline"><em>π</em><sub><em>t</em></sub> (<em>y</em><sub><em>t</em></sub> − <em>r</em><sub><em>f</em>, <em>t</em></sub>)</span>
+− <span
+class="math inline">10<sup>−4</sup> |<em>π</em><sub><em>t</em></sub> − <em>π</em><sub><em>t</em> − 1</sub>|</span>.</p>
+</blockquote>
+<p>For SPY — one of the easiest-to-borrow securities in the world — the
+stock-borrow fee is a few basis points per year and is neglected; this
+is stated as an assumption rather than modelled.</p>
+<p><strong>Execution.</strong> Orders are executed at the <strong>open
+of day <span class="math inline"><em>t</em> + 1</span></strong> (the
+first price after the signal is computable); positions are held to the
+open of <span class="math inline"><em>t</em> + 2</span> and rebalanced
+at each open. The label, the backtest P&amp;L, and this execution rule
+are aligned by construction.</p>
+<p><strong>Costs.</strong> Daily strategies cannot assume costs away: we
+charge <strong>1 bp (<span class="math inline">10<sup>−4</sup></span>)
+per unit of target-weight turnover</strong> <span
+class="math inline">|<em>π</em><sub><em>t</em></sub> − <em>π</em><sub><em>t</em> − 1</sub>|</span>.
+This is a deliberately simple <em>proxy</em>, not an exact fill model:
+it ignores the weight drift that market moves induce between rebalances,
+intraday slippage against the open print, market impact, and the
+terminal liquidation of the final position. For SPY at our sizes these
+are second-order, and Appendix D shows the test Sharpe degrades
+gracefully (0.67 / 0.64 / 0.60 at 0.5 / 1 / 2 bp). For transparent
+comparison, the buy-and-hold benchmark is charged no costs at all — a
+single entry trade — which is generous to the benchmark, not to the
+strategy. Turnover and the resulting drag are reported explicitly in
+§10.</p>
+<p><strong>Risk discipline.</strong> The <span
+class="math inline">±1.5</span> cap; automatic de-risking via the <span
+class="math inline"><em>σ̂</em><sub>21</sub><sup>2</sup></span>
+denominator in volatile regimes; and turnover implicitly penalized
+through the cost term, which makes faint forecasts uneconomic to
+trade.</p>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="out-of-sample-evaluation-brief-4.9">10. Out-of-sample evaluation
+(brief §4.9)</h2>
+<p><strong>Train–test correspondence.</strong> Everything the
+confirmatory test evaluation uses was frozen before the test window: the
+feature definitions, the scaler (fitted on 2005–2019), the ridge
+coefficients (<span
+class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span> chosen on
+2015–2019), <span class="math inline"><em>γ</em></span>, the position
+rule and cap, and the 1 bp cost. At each test date we compute features
+after close <span class="math inline"><em>t</em></span>, forecast the
+excess return, set <span
+class="math inline"><em>π</em><sub><em>t</em></sub></span>, execute at
+open <span class="math inline"><em>t</em> + 1</span>, earn <span
+class="math inline"><em>r</em><sub><em>f</em></sub> + <em>π</em><sub><em>t</em></sub>(<em>y</em><sub><em>t</em></sub> − <em>r</em><sub><em>f</em></sub>)</span>
+minus turnover costs over the holding day, and move forward. The test
+window 2020-01-02 to 2026-10-28 (1,715 days: COVID crash, 2022 bear
+market, 2023–2026 bull run) received exactly one confirmatory
+evaluation.</p>
+<p><strong>Headline metrics (net of costs; Sharpe on excess over
+T-bill).</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Split</th>
+<th>Days</th>
+<th>Ann. return</th>
+<th>Ann. vol</th>
+<th>Sharpe</th>
+<th>Max DD</th>
+<th>Avg daily turnover</th>
+<th>Ann. cost drag</th>
+<th>OOS <span class="math inline"><em>R</em><sup>2</sup></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ridge strategy</td>
+<td>validation</td>
+<td>1,257</td>
+<td>11.1%</td>
+<td>13.8%</td>
+<td>0.76</td>
+<td>−16.5%</td>
+<td>0.16</td>
+<td>0.40%</td>
+<td>0.0020</td>
+</tr>
+<tr>
+<td><strong>Ridge strategy</strong></td>
+<td><strong>test</strong></td>
+<td><strong>1,715</strong></td>
+<td><strong>10.5%</strong></td>
+<td><strong>12.3%</strong></td>
+<td><strong>0.64</strong></td>
+<td><strong>−14.1%</strong></td>
+<td><strong>0.21</strong></td>
+<td><strong>0.53%</strong></td>
+<td><strong>0.0010</strong></td>
+</tr>
+<tr>
+<td>Mean fcst + vol mgmt</td>
+<td>test</td>
+<td>1,715</td>
+<td>8.8%</td>
+<td>9.3%</td>
+<td>0.65</td>
+<td>−9.7%</td>
+<td>0.04</td>
+<td>0.10%</td>
+<td>0.0001</td>
+</tr>
+<tr>
+<td>AR(1) strategy</td>
+<td>test</td>
+<td>1,715</td>
+<td>7.8%</td>
+<td>13.1%</td>
+<td>0.42</td>
+<td>−18.5%</td>
+<td>0.69</td>
+<td>1.75%</td>
+<td>−0.0023</td>
+</tr>
+<tr>
+<td>Fixed exposure 0.568*</td>
+<td>test</td>
+<td>1,715</td>
+<td>10.2%</td>
+<td>10.8%</td>
+<td>0.69</td>
+<td>−19.3%</td>
+<td>0.00</td>
+<td>0.00%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Buy-and-hold SPY</td>
+<td>test</td>
+<td>1,715</td>
+<td>15.1%</td>
+<td>19.1%</td>
+<td>0.69</td>
+<td>−32.1%</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><em>Fixed exposure is an exploratory diagnostic calibrated on the
+ridge strategy’s average test position (§11); it is not a tradable
+pre-specified strategy.</em></p>
+<p>Three observations:</p>
+<ol type="1">
+<li><strong>Ridge beats AR(1) clearly as a trading strategy</strong>
+(Sharpe 0.64 vs 0.42). The AR(1) forecast flips sign constantly, trades
+0.70 units/day, and pays 1.75% per year in costs; its forecast <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup></span>
+is negative against the recursive mean. The shrunken multivariate
+forecast is smoother (turnover 0.21, drag 0.54%).</li>
+<li><strong>Buy-and-hold still edges the strategy on Sharpe</strong>
+(0.69 vs 0.64) in a mostly bullish window, but the strategy cuts
+volatility from 19.1% to 12.3% and the worst drawdown from −32.1% to
+−14.1%.</li>
+<li><strong>Validation→test degradation is modest</strong> (Sharpe 0.76
+→ 0.64), the expected haircut from validation-based selection; the sign
+of the edge survives.</li>
+</ol>
+<p><strong>Required plots.</strong></p>
+<p><img src="C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/figures/fig1_oos_r2.png" /></p>
+<p><em>Figure 1. Out-of-sample prediction quality. Left: ridge
+excess-return forecast vs realized excess return on the test window,
+with fitted slope. Right: OOS <span
+class="math inline"><em>R</em><sup>2</sup></span> against the recursive
+historical-mean naive forecast for ridge and AR(1).</em></p>
+<p><img src="C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/figures/fig2_cumulative_returns.png" /></p>
+<p><em>Figure 2. Cumulative out-of-sample performance, net of costs, log
+scale, with drawdowns below. Buy-and-hold ends highest but lives through
+−32% (COVID 2020) and −25% (2022) troughs; the ridge strategy compounds
+more smoothly; the mean-forecast and fixed-exposure benchmarks track it
+closely — the subject of §11.</em></p>
+<p><img src="C:/Users/刘玮烨/Desktop/新建文件夹 (2)/DSA5205/output/figures/fig3_yearly_stats.png" /></p>
+<p><em>Figure 3. Performance by calendar year (Sharpe computed on excess
+over T-bill, consistent with the headline table). The strategy’s
+relative value concentrates in stress years — 2022: −4.6% vs −18.7% for
+buy-and-hold — while it gives up upside in melt-up years.</em></p>
+<p><strong>Per-year detail (net of costs).</strong></p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th>Year</th>
+<th>Ridge ret</th>
+<th>Ridge Sharpe</th>
+<th>Mean-fcst ret</th>
+<th>Mean-fcst Sharpe</th>
+<th>AR(1) ret</th>
+<th>AR(1) Sharpe</th>
+<th>B&amp;H ret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020</td>
+<td>5.3%</td>
+<td>0.43</td>
+<td>8.1%</td>
+<td>0.80</td>
+<td>3.1%</td>
+<td>0.25</td>
+<td>16.8%</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>20.3%</td>
+<td>1.74</td>
+<td>16.6%</td>
+<td>1.57</td>
+<td>6.9%</td>
+<td>0.62</td>
+<td>31.9%</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>−4.6%</td>
+<td>−0.49</td>
+<td>−5.8%</td>
+<td>−1.38</td>
+<td>−6.3%</td>
+<td>−0.63</td>
+<td>−18.7%</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>11.0%</td>
+<td>0.55</td>
+<td>13.5%</td>
+<td>0.90</td>
+<td>3.7%</td>
+<td>−0.07</td>
+<td>24.6%</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>25.7%</td>
+<td>1.54</td>
+<td>17.5%</td>
+<td>1.12</td>
+<td>19.6%</td>
+<td>1.08</td>
+<td>26.5%</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>12.6%</td>
+<td>0.62</td>
+<td>9.7%</td>
+<td>0.60</td>
+<td>21.1%</td>
+<td>1.05</td>
+<td>18.2%</td>
+</tr>
+<tr>
+<td>2026 (to Oct)</td>
+<td>4.1%</td>
+<td>0.16</td>
+<td>2.3%</td>
+<td>−0.06</td>
+<td>7.5%</td>
+<td>0.55</td>
+<td>11.8%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribution-where-does-the-performance-come-from">11.
+Attribution: where does the performance come from?</h2>
+<p>A strategy can beat its benchmark by holding <em>less</em> market, by
+<em>managing</em> exposure over time, or by <em>forecasting</em>
+returns. These have very different economic meanings, so we decompose
+the ridge strategy’s test performance against the benchmarks of §4.</p>
+<p><strong>Exposure.</strong> The ridge strategy holds SPY 88.5% of days
+with an average position of 0.568 — it is, on average, roughly half
+invested. A fixed 0.568× SPY weight with the same cash accounting earns
+a Sharpe of 0.69 — matching buy-and-hold (0.69) at barely over half the
+volatility. So at this horizon, simply <em>holding less market</em>
+already reproduces the headline Sharpe; the low drawdown of the timing
+strategy is largely a low-exposure effect.</p>
+<p><strong>Volatility management.</strong> The mean-forecast row
+isolates the position rule: a constant bullish forecast, scaled each day
+by <span
+class="math inline">1/<em>σ̂</em><sub>21</sub><sup>2</sup></span>,
+achieves Sharpe 0.65 with the lowest drawdown of any row (−9.7%) and
+almost no turnover (0.04/day, 0.10%/yr drag). Volatility-managed sizing
+by itself explains most of the strategy’s character — cutting exposure
+in high-variance regimes (2020, 2022) and restoring it in calm ones.</p>
+<p><strong>Forecasting increment.</strong> What the twelve features add
+on top is modest: ridge return is higher than the mean-forecast row
+(10.5% vs 8.8%) but with higher volatility, for an essentially identical
+Sharpe (0.64 vs 0.65); and the forecast <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup></span>
+is 0.0010 — positive against the recursive mean, but economically
+tiny.</p>
+<p><strong>CAPM.</strong> Regressing the strategy’s daily net excess
+return on the market excess return (Newey–West <span
+class="math inline"><em>t</em></span>-statistics, lag 5):</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th><span class="math inline"><em>α</em></span> (ann.)</th>
+<th><span class="math inline"><em>β</em></span></th>
+<th><span class="math inline"><em>t</em>(<em>α</em>)</span></th>
+<th><span class="math inline"><em>t</em>(<em>β</em>)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ridge strategy</td>
+<td>+1.8%</td>
+<td>0.47</td>
+<td>0.59</td>
+<td>11.59</td>
+</tr>
+<tr>
+<td>Mean fcst + vol mgmt</td>
+<td>+1.6%</td>
+<td>0.34</td>
+<td>0.66</td>
+<td>9.71</td>
+</tr>
+<tr>
+<td>AR(1) strategy</td>
+<td>+0.9%</td>
+<td>0.35</td>
+<td>0.23</td>
+<td>8.17</td>
+</tr>
+</tbody>
+</table>
+<p>The market beta of 0.47 confirms the low-exposure character. The
+alpha is positive but its <span
+class="math inline"><em>t</em></span>-statistic of 0.59 is far from
+significant — the data do not reject “no alpha”. Notably, the
+mean-forecast benchmark shows a similar insignificant alpha, consistent
+with volatility management (a real, documented effect — Moreira and
+Muir, 2017) rather than return prediction driving both.</p>
+<p><strong>What we conclude.</strong> The strategy’s out-of-sample
+behavior is explained primarily by (i) lower average market exposure and
+(ii) volatility-managed sizing; the incremental contribution of the
+twelve technical features is small and not statistically established. We
+do not claim a robust timing alpha.</p>
+<h2 id="interpretation-what-worked-what-did-not">12. Interpretation:
+what worked, what did not</h2>
+<p><strong>What the model learned.</strong> Fitted coefficients
+(standardized features, 2005–2019) are dominated by <em>short-horizon
+reversal</em>: <code>ret_1</code> (−7.2×10⁻⁵), <code>mom_5</code>
+(−9.4×10⁻⁵), <code>mom_10</code> (−5.0×10⁻⁵), <code>ma_ratio_10</code>
+(−8.7×10⁻⁵) all carry negative weights — after up-moves and above-trend
+prices the model expects give-back. Volatility features carry small
+negative weights; <code>range_hl</code> (+3.6×10⁻⁵) is small positive;
+the intercept (+3.6×10⁻⁴ ≈ 9.6%/yr) is the unconditional excess premium.
+Every coefficient is small — shrinkage spreads the signal thinly across
+all twelve features.</p>
+<p><strong>What worked.</strong> (i) <em>Shrinkage</em>: the single most
+important design choice — validation Sharpe went from ≈ 0 at <span
+class="math inline"><em>λ</em> ≤ 100</span> to 0.76 at <span
+class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span>, and the edge
+survived into the test window. (ii) <em>Volatility-managed sizing</em>:
+it, not the forecast, produced the attractive risk profile, as the
+mean-forecast benchmark makes visible (Sharpe 0.65, max DD −9.7%
+standalone). (iii) <em>Cost-aware evaluation</em>: it changed rankings —
+AR(1) looks acceptable gross and is clearly inferior net. (iv)
+<em>Executable timing</em>: moving execution to the next open removed
+the same-close look-ahead that a close t signal cannot honestly trade
+on. (v) <em>Process discipline</em>: one confirmatory test evaluation,
+with all later diagnostics clearly fenced off as exploratory.</p>
+<p><strong>What did not work.</strong> (i) <em>Beating buy-and-hold in a
+bull market</em>: the strategy underperforms on raw return and slightly
+on Sharpe over 2020–2026; partial exposure forgoes upside in persistent
+uptrends. (ii) <em>Demonstrating forecast value</em>: the ridge
+forecast’s <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup></span>
+of 0.0010 is statistically and economically faint, the CAPM alpha is
+insignificant, and the features add no Sharpe over volatility-managed
+sizing alone — an honest negative result about daily technical
+predictability, not a model failure. (iii) <em>AR(1) as a
+benchmark</em>: its negative test <span
+class="math inline"><em>R</em><sub><em>O</em><em>O</em><em>S</em></sub><sup>2</sup></span>
+confirms that the simplest autoregressive signal does not survive
+contact with costs.</p>
+<p><strong>Limitations.</strong> Single asset (no cross-sectional
+diversification of signal noise); a single train/validation/test split;
+flat 1 bp cost with no market-impact or borrow-fee modeling; linear
+model only; no statistical significance claimed for the forecast itself.
+Natural extensions, in order: expanding-window periodic refits, and a
+small cross-section of index ETFs to diversify signal noise. We
+deliberately did not add model complexity (random features, neural
+networks): the binding constraint is the faint daily signal, not
+functional flexibility, and a larger search would raise the risk of
+test-set reuse.</p>
+<h2 id="reproducibility">13. Reproducibility</h2>
+<p>All results regenerate end-to-end from the package root (see
+<code>README.md</code>; <code>requirements.txt</code> pins
+versions):</p>
+<pre><code>python code/fetch_data.py      # downloads SPY + T-bill data into data/ (skippable: cache is committed)
+python code/run_backtest.py    # writes output/results/*.csv + run_config.json
+python code/run_robustness.py  # Appendix D diagnostics -&gt; output/results/robustness.csv
+python code/make_figures.py    # writes output/figures/*.png + yearly_stats.csv
+python code/build_report.py    # rebuilds this PDF from report.md (needs pandoc)
+python code/test_backtest.py   # boundary / drawdown / naive-forecast assertions</code></pre>
+<p>The committed <code>data/</code> cache lets the whole pipeline run
+without network access; <code>fetch_data.py</code> is only needed to
+refresh the data, and it validates both series before atomically
+replacing the cache, so a failed download never corrupts it.</p>
+<p>Fixed seed (42), relative paths only, no hard-coded local
+directories, no API keys. The environment, grid, selected <span
+class="math inline"><em>λ</em></span>, coefficients, <span
+class="math inline"><em>γ</em></span> values, and test diagnostics
+(average position, long-day share) are in
+<code>output/results/run_config.json</code>. Figure-to-code
+cross-reference: Figures 1–4 ← <code>make_figures.py</code> ←
+<code>output/results/*.csv</code> ← <code>run_backtest.py</code> ←
+<code>data/*.csv</code> ← <code>fetch_data.py</code>. The video
+walkthrough runs these commands in order and shows the same
+artifacts.</p>
+<p><strong>Safety note.</strong> Research/backtesting on historical
+public data only; no real orders were or will be placed.</p>
+<h2 id="contribution-note">14. Contribution note</h2>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Member 1</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 2</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 3</td>
+<td><em>TBD</em></td>
+</tr>
+<tr>
+<td>Member 4</td>
+<td><em>TBD</em></td>
+</tr>
+</tbody>
+</table>
+<p>All members reviewed the final report, code, and video.</p>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="appendix-a.-fitted-model">Appendix A. Fitted model</h2>
+<p>Final ridge model, refitted on 2005–2019 with <span
+class="math inline"><em>λ</em> = 3 × 10<sup>4</sup></span> on
+standardized features (coefficients comparable in magnitude). Negative
+momentum/trend coefficients = short-horizon reversal. Source:
+<code>output/results/run_config.json</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Coefficient</th>
+<th>Sign reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ret_1</code></td>
+<td>−7.2×10⁻⁵</td>
+<td>1-day reversal</td>
+</tr>
+<tr>
+<td><code>mom_5</code></td>
+<td>−9.4×10⁻⁵</td>
+<td>weekly reversal</td>
+</tr>
+<tr>
+<td><code>mom_10</code></td>
+<td>−5.0×10⁻⁵</td>
+<td>2-week reversal</td>
+</tr>
+<tr>
+<td><code>mom_21</code></td>
+<td>−3.5×10⁻⁵</td>
+<td>monthly reversal</td>
+</tr>
+<tr>
+<td><code>vol_5</code></td>
+<td>−2.9×10⁻⁵</td>
+<td>high vol → lower expected return</td>
+</tr>
+<tr>
+<td><code>vol_21</code></td>
+<td>−1.9×10⁻⁵</td>
+<td>high vol → lower expected return</td>
+</tr>
+<tr>
+<td><code>ma_ratio_10</code></td>
+<td>−8.7×10⁻⁵</td>
+<td>above-trend → give-back</td>
+</tr>
+<tr>
+<td><code>ma_ratio_50</code></td>
+<td>−3.4×10⁻⁵</td>
+<td>above-trend → give-back</td>
+</tr>
+<tr>
+<td><code>ma_ratio_200</code></td>
+<td>−1.1×10⁻⁵</td>
+<td>above-trend → give-back</td>
+</tr>
+<tr>
+<td><code>rsi_14</code></td>
+<td>−2.2×10⁻⁵</td>
+<td>overbought → give-back</td>
+</tr>
+<tr>
+<td><code>range_hl</code></td>
+<td>+3.6×10⁻⁵</td>
+<td>wide range → small positive</td>
+</tr>
+<tr>
+<td><code>vol_chg</code></td>
+<td>−0.2×10⁻⁵</td>
+<td>volume spike → negligible</td>
+</tr>
+<tr>
+<td>intercept</td>
+<td>+3.65×10⁻⁴</td>
+<td>unconditional premium ≈ 9.6%/yr</td>
+</tr>
+</tbody>
+</table>
+<p>AR(1) baseline: a small negative slope on <code>ret_1</code> (daily
+reversal).</p>
+<h2 id="appendix-b.-full-validation-grid">Appendix B. Full validation
+grid</h2>
+<p>All ten models tried (the complete search — nothing else was tuned),
+fitted on 2005–2014 and scored on 2015–2019. Source:
+<code>output/results/lambda_selection.csv</code>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline"><em>λ</em></span></th>
+<th>Val. Sharpe</th>
+<th>Val. ann. return</th>
+<th>Val. OOS <span
+class="math inline"><em>R</em><sup>2</sup></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>−0.07</td>
+<td>−0.9%</td>
+<td>−0.0099</td>
+</tr>
+<tr>
+<td>1</td>
+<td>−0.07</td>
+<td>−0.8%</td>
+<td>−0.0099</td>
+</tr>
+<tr>
+<td>10</td>
+<td>−0.06</td>
+<td>−0.7%</td>
+<td>−0.0096</td>
+</tr>
+<tr>
+<td>100</td>
+<td>+0.02</td>
+<td>0.3%</td>
+<td>−0.0072</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td>0.30</td>
+<td>4.3%</td>
+<td>−0.0012</td>
+</tr>
+<tr>
+<td>3,000</td>
+<td>0.43</td>
+<td>6.3%</td>
+<td>+0.0011</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>0.59</td>
+<td>8.8%</td>
+<td>+0.0024</td>
+</tr>
+<tr>
+<td><strong>30,000</strong></td>
+<td><strong>0.76</strong></td>
+<td><strong>11.1%</strong></td>
+<td><strong>+0.0020</strong></td>
+</tr>
+<tr>
+<td>100,000</td>
+<td>0.66</td>
+<td>8.8%</td>
+<td>+0.0011</td>
+</tr>
+<tr>
+<td>300,000</td>
+<td>0.66</td>
+<td>8.5%</td>
+<td>+0.0006</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-c.-data-dictionary">Appendix C. Data dictionary</h2>
+<p>Raw files in <code>data/</code> (produced by
+<code>code/fetch_data.py</code>):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Columns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spy_daily.csv</code></td>
+<td><code>date, open, high, low, close, volume</code></td>
+<td>split/dividend-adjusted OHLCV, 2004-06-01 → 2026-10-30, 5,641
+rows</td>
+</tr>
+<tr>
+<td><code>dtb3.csv</code></td>
+<td><code>date, dtb3</code></td>
+<td>annualized 3-month T-bill rate in percent (FRED DTB3, or Yahoo ^IRX
+fallback)</td>
+</tr>
+</tbody>
+</table>
+<p>Derived panel (built in memory by
+<code>code/features.py::build_dataset</code>): one row per decision date
+<span class="math inline"><em>t</em></span> from 2005-03-18 to
+2026-10-28 (5,435 rows), with the twelve features of §3, the 21-day
+realized variance <span
+class="math inline"><em>σ̂</em><sub>21, <em>t</em></sub><sup>2</sup></span>,
+the open-to-open label <code>fwd_ret</code> (<span
+class="math inline"><em>O</em><em>p</em><em>e</em><em>n</em><sub><em>t</em> + 2</sub>/<em>O</em><em>p</em><em>e</em><em>n</em><sub><em>t</em> + 1</sub> − 1</span>),
+<code>label_end_date</code> (the date the label is fully realized — the
+open of <span class="math inline"><em>t</em> + 2</span> — used to
+exclude unrealized labels at split boundaries), the risk-free accrual
+<code>rf_next</code>, the excess label <code>fwd_excess</code>, and the
+recursive naive forecast <code>naive_excess</code> (expanding mean of
+<code>fwd_excess</code> through <span
+class="math inline"><em>t</em> − 2</span>). No derived data is
+persisted; everything is rebuilt from the raw files on every run.</p>
+<h2 id="appendix-d.-robustness-diagnostics-exploratory">Appendix D.
+Robustness diagnostics (exploratory)</h2>
+<p>The following variants were computed <strong>after</strong> the
+single confirmatory test evaluation, as diagnostics of how sensitive the
+conclusions are to design knobs. They use test information, were not
+used to re-select anything, and the submitted configuration remains the
+pre-set one (<span class="math inline"><em>λ</em></span> from the
+validation grid, cap ±1.5, 1 bp cost, long/short). Every number below is
+generated by <code>code/run_robustness.py</code> from the frozen main
+configuration and stored in
+<code>output/results/robustness.csv</code>.</p>
+<ol type="1">
+<li><strong>Cost sensitivity.</strong> Test Sharpe is 0.67 at 0.5 bp,
+0.64 at the 1 bp baseline, and 0.60 at 2 bp per unit turnover: the ridge
+strategy degrades gracefully because its turnover is low. The AR(1)
+baseline (3× higher turnover) degrades much faster, so the ranking ridge
+&gt; AR(1) is unchanged at every cost level.</li>
+<li><strong>Position cap.</strong> Capping at ±1.0 instead of ±1.5
+leaves the test Sharpe essentially unchanged (0.66 vs 0.64; annualized
+return 9.7% vs 10.5%): the strategy does not depend on the leverage
+allowance.</li>
+<li><strong>Long-only variant.</strong> Clipping positions to <span
+class="math inline">[0, 1.5]</span> gives a test Sharpe of 0.64 (vs 0.64
+with shorts): most of the value comes from scaling exposure down in
+high-variance regimes, not from being short.</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>Campbell, J. Y., and S. B. Thompson (2008). Predicting excess stock
+returns out of sample: Can anything beat the historical average?
+<em>Review of Financial Studies</em> 21(4).</li>
+<li>Chinco, A. M., A. D. Clark-Joseph, and M. Ye (2019). Sparse signals
+in the cross-section of returns. <em>Journal of Finance</em> 74(1),
+449–492.</li>
+<li>Kelly, B. T., S. Malamud, and K. Zhou (2024). The virtue of
+complexity in return prediction. <em>Journal of Finance</em> 79(1),
+459–501.</li>
+<li>Moreira, A., and T. Muir (2017). Volatility-managed portfolios.
+<em>Journal of Finance</em> 72(4), 1611–1644.</li>
+<li>Data: Yahoo Finance (SPY adjusted OHLCV, ^IRX); FRED (DTB3), Federal
+Reserve Bank of St. Louis.</li>
+</ul>
+</body>
+</html>
