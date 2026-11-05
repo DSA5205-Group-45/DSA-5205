@@ -1,0 +1,8 @@
+{
+  "requested": 505,
+  "failed": 0,
+  "failure_rate": 0.0,
+  "failed_tickers": [],
+  "universe_type": "current_constituents_backfilled",
+  "source": "Wikipedia + Yahoo Finance"
+}
