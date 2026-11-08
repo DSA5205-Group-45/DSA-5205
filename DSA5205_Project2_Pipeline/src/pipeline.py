@@ -219,7 +219,9 @@ def attach_labels(screened,panel,cfg):
     out['qqq_return']=[qqq_lookup.get(e,np.nan)/qqq_lookup.get(s,np.nan)-1 for s,e in zip(out.execution_date,out.label_end_date)]
     out['target_spy_relative_return']=out.target_forward_return-out.spy_return
     out['target_qqq_relative_return']=out.target_forward_return-out.qqq_return
-    out['split']=np.select([out.decision_date<pd.Timestamp(cfg.get('train_end_exclusive','2021-01-01')),out.decision_date<pd.Timestamp(cfg.get('validation_end_exclusive','2023-01-01'))],['train','validation'],default='test')
+    out['split']=np.select([out.decision_date<pd.Timestamp(cfg.get('train_end_exclusive','2020-01-01')),
+                            out.decision_date<pd.Timestamp(cfg.get('validation_end_exclusive','2022-01-01'))],
+                           ['train','validation'],default='test')
     out['label_status']=np.where(out.target_forward_return.notna(),'valid','missing_or_unsettled')
     return out
 

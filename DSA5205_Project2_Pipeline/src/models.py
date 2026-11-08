@@ -38,8 +38,8 @@ def run_model(frequency='monthly', model='ridge', seed=42):
     df['label_end_date']=pd.to_datetime(df.label_end_date)
     if any(df.ticker.astype(str).str.startswith('SYN')): raise RuntimeError('Synthetic input refused')
     target='target_forward_return'
-    tr=df[(df.split=='train') & (df.label_end_date<=pd.Timestamp('2020-12-31'))].copy()
-    va=df[(df.split=='validation') & (df.label_end_date<=pd.Timestamp('2022-12-31'))].copy()
+    tr=df[(df.split=='train') & (df.label_end_date<=pd.Timestamp('2020-01-01'))].copy()
+    va=df[(df.split=='validation') & (df.label_end_date<=pd.Timestamp('2022-01-01'))].copy()
     te=df[df.split=='test'].copy()
     incomplete=te.groupby('decision_date').ticker.nunique()
     if (incomplete!=30).any():
@@ -55,8 +55,8 @@ def run_model(frequency='monthly', model='ridge', seed=42):
     tuning=pd.DataFrame(history).sort_values(['validation_mse','params'])
     best=json.loads(tuning.iloc[0]['params'])
     final=build_model(model,best,seed)
-    # Only labels realized before the 2023 test starts; no test rows used.
-    refit=df[(df.decision_date<pd.Timestamp('2023-01-01'))&(df.label_end_date<=pd.Timestamp('2022-12-31'))]
+    # Only labels realized before the 2022 test starts; no test rows used.
+    refit=df[(df.decision_date<pd.Timestamp('2022-01-01'))&(df.label_end_date<=pd.Timestamp('2022-01-01'))]
     final.fit(refit[FEATURES],refit[target])
     te['prediction']=final.predict(te[FEATURES])
     te['model']=model

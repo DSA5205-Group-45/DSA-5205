@@ -2,8 +2,5 @@
 __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
-data/raw/*.parquet
-data/raw/cache/
-data/processed_with_nan/
-data/processed_ready/
+data/
 outputs/
