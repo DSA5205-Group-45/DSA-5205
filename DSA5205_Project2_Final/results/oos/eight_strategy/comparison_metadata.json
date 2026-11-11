@@ -1,0 +1,9 @@
+{
+  "generated_utc": "2026-11-11T15:19:56Z",
+  "n_strategies": 8,
+  "n_periods": 48,
+  "date_start": "2022-01-31",
+  "date_end": "2025-12-31",
+  "primary_strategy": "ridge",
+  "frequency": "monthly"
+}

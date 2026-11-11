@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-11-11T15:19:51Z",
+  "decision_date": "2025-06-30",
+  "model": "ridge",
+  "n_candidates": 30,
+  "n_selected": 10,
+  "weight_per_selected": 0.1,
+  "weight_sum": 1.0,
+  "source": "oos/score_to_position_example.csv",
+  "figure": "oos/figures/fig_score_to_position.png",
+  "note": "Real saved OOS predictions; no illustrative scores."
+}

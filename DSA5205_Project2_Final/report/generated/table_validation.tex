@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & MSE & $R^2$ & OOS $R^2$ & Rank IC & Sharpe & CAGR & Max DD \\
+\midrule
+Ridge & 0.02242 & 0.0390 & 0.0435 & 0.0438 & 0.918 & 45.7\% & -31.7\% \\
+LASSO & 0.02228 & 0.0451 & 0.0495 & 0.0250 & 0.926 & 46.1\% & -30.0\% \\
+Random Forest & 0.02241 & 0.0395 & 0.0439 & 0.0261 & 0.866 & 40.2\% & -33.2\% \\
+XGBoost & 0.02264 & 0.0296 & 0.0341 & -0.0098 & 0.693 & 26.6\% & -29.2\% \\
+\bottomrule
+\end{tabular}
+\caption{Validation comparison, 2020--2021 (22 settled monthly cohorts). Sharpe uses a zero risk-free rate. OOS $R^2$ uses the training mean as the naive forecast.}
+\label{tab:validation}
+\end{table}

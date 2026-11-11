@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{2.2cm}p{4.1cm}p{6.2cm}r}
+\toprule
+Model & Algorithm & Grid & Configurations \\
+\midrule
+Ridge & Closed-form L2 regression & $\alpha\in\{0.1,1,10,100,1000,10000\}$ & 6 \\
+LASSO & L1 coordinate descent & $\alpha\in\{10^{-5},10^{-4},10^{-3},10^{-2},0.1\}$ & 5 \\
+Random Forest & Bagged regression trees & $\text{depth}\in\{3,6\}$, $\text{leaf}\in\{10,25\}$ & 4 \\
+XGBoost & Boosted regression trees & $\text{depth}\in\{2,3\}$, $\text{lr}\in\{0.03,0.1\}$, $n\in\{100,200\}$ & 8 \\
+\bottomrule
+\end{tabular}
+\caption{Pre-declared hyperparameter grids. The twenty-three configurations are fixed before estimation.}
+\label{tab:grid}
+\end{table}

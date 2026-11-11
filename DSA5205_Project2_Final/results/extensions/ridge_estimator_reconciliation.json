@@ -1,0 +1,39 @@
+{
+  "status": "same_economic_rule_different_fitted_model",
+  "conclusion": "Main Ridge and R4 apply the same economic trading rule but use different Ridge estimators trained on different candidate samples. Their performance records are not numerically interchangeable and must not be merged or counted twice.",
+  "main_ridge": {
+    "rule": "3x3 screen -> Ridge Top 10 -> equal weight",
+    "alpha": "{\"alpha\": 1000.0}",
+    "refit_rows": 4260,
+    "candidate_pool_size": 30,
+    "training_panel": "main experiment 30-candidate panel",
+    "cagr": 0.4304303238866687,
+    "sharpe": 1.2722739733277701,
+    "max_drawdown": -0.28538150087429137
+  },
+  "r4": {
+    "rule": "3x3 screen -> Ridge Top 10 -> equal weight",
+    "alpha": 1000.0,
+    "refit_rows": 8520,
+    "candidate_pool_size": 60,
+    "training_panel": "extension 60-candidate momentum pool",
+    "cagr": 0.44214744855314136,
+    "sharpe": 1.3043108722416614,
+    "max_drawdown": -0.28120205880656624
+  },
+  "comparison": {
+    "n_dates": 48,
+    "mean_holdings_overlap": 0.9229166666666667,
+    "min_holdings_overlap": 0.8,
+    "max_holdings_overlap": 1.0,
+    "identical_holding_dates": 18,
+    "return_correlation": 0.9974586213836959,
+    "mean_abs_return_difference": 0.0043233462205680626,
+    "max_abs_return_difference": 0.018871692360032097,
+    "cagr_difference_r4_minus_main": 0.011717124666472678,
+    "sharpe_difference_r4_minus_main": 0.032036898913891276
+  },
+  "reporting_policy": "Main Ridge is the primary result. R4 is labelled as a main-rule reference using the extension's 60-candidate estimator, shown in the exploratory extension section only, and excluded from any strategy ranking that already contains Main Ridge.",
+  "generated_utc": "2026-11-11T15:18:52Z",
+  "figure": "extensions/figures/fig_internal_estimator_reconciliation.png"
+}

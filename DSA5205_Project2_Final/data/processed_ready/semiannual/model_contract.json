@@ -1,0 +1,33 @@
+{
+  "primary_target": "target_forward_return",
+  "secondary_labels": [
+    "target_spy_relative_return",
+    "target_qqq_relative_return"
+  ],
+  "benchmarks": [
+    "SPY",
+    "QQQ"
+  ],
+  "feature_columns": [
+    "mom_21",
+    "mom_63",
+    "mom_126",
+    "mom_2_12",
+    "relative_mom_63",
+    "vol_21",
+    "vol_63",
+    "beta_252",
+    "drawdown_63",
+    "ma_ratio_50",
+    "ma_ratio_200",
+    "rsi_14",
+    "ln_adv_20",
+    "volume_ratio_21",
+    "range_hl"
+  ],
+  "split_boundaries": {
+    "train_end_exclusive": "2021-01-01",
+    "validation_end_exclusive": "2023-01-01"
+  },
+  "fit_rule": "label_end_date must be <= model fit cutoff; use chronological splits"
+}

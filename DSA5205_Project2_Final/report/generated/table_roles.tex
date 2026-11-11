@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Model & Research role & Validation MSE & Rank IC & Sharpe & Primary \\
+\midrule
+Ridge & Primary research model & 0.02242 & 0.0438 & 0.918 & Yes \\
+LASSO & Alternative model & 0.02228 & 0.0250 & 0.926 & No \\
+Random Forest & Alternative model & 0.02241 & 0.0261 & 0.866 & No \\
+XGBoost & Alternative model & 0.02264 & -0.0098 & 0.693 & No \\
+\bottomrule
+\end{tabular}
+\caption{Primary-model designation. Ridge is the primary model on economic and diagnostic grounds; its $\alpha$ is chosen by validation MSE within Ridge. The other three models are alternatives.}
+\label{tab:roles}
+\end{table}

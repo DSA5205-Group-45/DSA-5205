@@ -1,0 +1,5 @@
+model,best_params,validation_mse,validation_sharpe,validation_cagr,validation_max_drawdown,mse_rank,sharpe_rank,selection_rank,selected,selection_criterion,is_primary_model
+lasso,"{""alpha"": 0.001}",0.0222814904422356,0.9263117584681484,0.461383450430652,-0.3003436827755907,1,1,1,True,lowest_validation_mse,False
+rf,"{""max_depth"": 3, ""min_samples_leaf"": 25}",0.0224122982931558,0.8659448224355398,0.4019624026674531,-0.3322607617747488,2,3,2,False,lowest_validation_mse,False
+ridge,"{""alpha"": 1000.0}",0.0224217897261821,0.9177431009544889,0.456895516460913,-0.3171427466056307,3,2,3,False,lowest_validation_mse,True
+xgb,"{""learning_rate"": 0.03, ""max_depth"": 2, ""n_estimators"": 100}",0.022641779637045,0.6931792844641631,0.2658991279398086,-0.2915949764760313,4,4,4,False,lowest_validation_mse,False

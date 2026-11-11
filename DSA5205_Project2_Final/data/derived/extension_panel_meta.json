@@ -1,0 +1,9 @@
+{
+  "source_full_feature_panel": "../DSA-5205/DSA5205_Project2_Pipeline/data/processed_with_nan/full_feature_panel.parquet",
+  "source_sha256": "6f7db85d6d2b2846a8f6017b031f451774d47cb25960a64a77dae6fe009964d0",
+  "n_rows": 57600,
+  "n_decision_dates": 192,
+  "decision_start": "2010-01-29",
+  "decision_end": "2025-12-31",
+  "rule": "ADV20 top 300 among price/liquidity/coverage/feature-eligible names, labels via next-open to next-rebalance-open"
+}

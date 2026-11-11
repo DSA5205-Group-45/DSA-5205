@@ -1,0 +1,9 @@
+{
+  "strategies.py": "224e7ad143e27cb4d07cb83e81699eead2e5548e7b0e803aa62a30ae4d50fe6a",
+  "src/pipeline.py": "f0727c83cacaf83d5e48d290e672ab78feaa0c2cad3a4763e7081e28ca5176db",
+  "note": "Files copied verbatim from DSA5205_Project2_Pipeline. tests/test_ridge_extension.py fails if these change.",
+  "backtest_functions": {
+    "portfolio_backtest": "4969af1014262c01a3a8bd408ad712247b36c01ce9b09d674ee47cb6d7a7c9d8",
+    "performance": "531310535b2105f6e550c3d89fdd5094af25e873b7796d606460926b8b8c5e32"
+  }
+}

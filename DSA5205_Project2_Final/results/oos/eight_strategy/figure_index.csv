@@ -1,0 +1,7 @@
+figure,file,source
+Figure 1,fig1_four_model_wealth.png,eight_strategy/monthly_returns.csv
+Figure 2,fig2_ridge_vs_benchmarks_wealth.png,eight_strategy/monthly_returns.csv
+Figure 3,fig3_eight_strategy_summary.png,eight_strategy/metrics.csv
+Figure 4,fig4_oos_drawdowns.png,eight_strategy/monthly_returns.csv
+Figure 5,fig5_annual_returns.png,eight_strategy/annual_returns.csv
+Figure 6,fig6_risk_adjusted.png,eight_strategy/metrics.csv

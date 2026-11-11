@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{p{2.2cm}p{3.4cm}p{5.8cm}p{2.6cm}}
+\toprule
+Strategy & Role in the study & Selection rule & Weighting \\
+\midrule
+Ridge & Primary model & 3$\times$3 pool, Ridge Top 10 & Equal 10\% \\
+LASSO & Alternative ML & 3$\times$3 pool, LASSO Top 10 & Equal 10\% \\
+Random Forest & Alternative ML & 3$\times$3 pool, RF Top 10 & Equal 10\% \\
+XGBoost & Alternative ML & 3$\times$3 pool, XGB Top 10 & Equal 10\% \\
+B1 & Momentum baseline & Momentum Top 10, full liquid universe & Equal 10\% \\
+B3 & Momentum baseline & Momentum Top 10, 3$\times$3 pool & Equal 10\% \\
+SPY & Investable benchmark & Buy-and-hold S\&P 500 ETF & Fully invested \\
+QQQ & Investable benchmark & Buy-and-hold Nasdaq-100 ETF & Fully invested \\
+\bottomrule
+\end{tabular}
+\caption{Strategy roles. B1 and B3 are systematic trading baselines, not investable index products; SPY and QQQ are investable buy-and-hold alternatives.}
+\label{tab:strategies}
+\end{table}

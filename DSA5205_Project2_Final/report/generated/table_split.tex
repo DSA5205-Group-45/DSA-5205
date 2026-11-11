@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lccccr}
+\toprule
+Stage & First decision & Last decision & Last label end & Cohorts & Rows \\
+\midrule
+Train & 2010-01-29 & 2019-10-31 & 2019-12-02 & 118 & 3,540 \\
+Validation & 2020-01-31 & 2021-10-29 & 2021-12-01 & 22 & 660 \\
+Refit & 2010-01-29 & 2021-10-29 & 2021-12-01 & 142 & 4,260 \\
+Test & 2022-01-31 & 2025-12-31 & 2026-02-02 & 48 & 1,440 \\
+\bottomrule
+\end{tabular}
+\caption{Chronological split after the realised-label embargo. Training and validation rows are included only when their labels settle by the split boundary.}
+\label{tab:split}
+\end{table}

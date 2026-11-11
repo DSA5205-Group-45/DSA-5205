@@ -1,0 +1,108 @@
+{
+  "schema_version": "2.0",
+  "status": "frozen",
+  "policy": "ridge_primary_economic_designation",
+  "run_id": "ridge-8e366135479d9a39",
+  "designation_timestamp_utc": "2026-11-11T12:30:02Z",
+  "selection_timestamp_utc": "2026-11-11T12:30:02Z",
+  "last_verified_utc": "2026-11-11T15:19:50Z",
+  "primary_model": "ridge",
+  "selected_model": "ridge",
+  "selected_hyperparameters": {
+    "alpha": 1000.0
+  },
+  "hyperparameter_rule": "lowest_validation_mse_within_ridge",
+  "selection_criterion": "ridge_primary_economic_designation",
+  "selection_rule_description": "Ridge is designated primary on economic and diagnostic grounds. Its L2 penalty is chosen by validation MSE within Ridge. The automatic cross-model minimum-MSE rule is retained only as a historical audit.",
+  "validation_metrics": {
+    "mse": 0.0224217897261821,
+    "rmse": 0.1497390721427851,
+    "mae": 0.0911064490851639,
+    "r2_sklearn": 0.0390465305407251,
+    "r2_oos_trainmean": 0.0435228829139592,
+    "mean_rank_ic": 0.0437658003842653,
+    "sharpe_ratio_rf0": 0.9177431009544889,
+    "cagr": 0.456895516460913,
+    "max_drawdown": -0.3171427466056307
+  },
+  "rationale": [
+    "The 15 predictors are correlated financial characteristics; L2 shrinkage stabilises a dense linear combination instead of discarding correlated information.",
+    "Ridge produces a continuous cross-sectional score, which maps directly to the ranking task used by the Top-10 portfolio.",
+    "Ridge has the highest validation mean Rank IC among the four models, the metric most closely aligned with cross-sectional selection.",
+    "Rolling training-window diagnostics show lower relative coefficient change for Ridge than LASSO (0.176 vs 0.282), supporting parameter stability.",
+    "Ridge is the pre-specified model of the original research design; this policy restores that designation rather than creating a new one."
+  ],
+  "diagnostic_evidence": {
+    "available": true,
+    "ridge_mean_relative_change": 0.176346623809861,
+    "lasso_mean_relative_change": 0.2818424574304325,
+    "ridge_relative_change_reduction": 0.3743078121812473,
+    "lasso_zero_fraction": 0.4011299435028249,
+    "ridge_sign_flips": 50,
+    "lasso_sign_flips": 1,
+    "n_windows": 59,
+    "high_correlation_pairs_0_70": 12
+  },
+  "historical_automatic_selection": {
+    "criterion": "lowest_validation_mse",
+    "selected_model": "lasso",
+    "selected_hyperparameters": {
+      "alpha": 0.001
+    },
+    "archived_manifest": {
+      "archived_utc": "2026-11-11T12:30:02Z",
+      "reason": "The original four-model experiment used an automatic lowest-validation-MSE rule, which selected LASSO. The revised research policy designates Ridge as the primary model on economic and diagnostic grounds. The automatic-selection audit is kept for transparency and is not deleted or overwritten.",
+      "files": [
+        {
+          "original": "validation/selection_contract.json",
+          "archived": "validation/archive/selection_contract_lasso_min_mse.json"
+        },
+        {
+          "original": "validation/model_selection_summary.csv",
+          "archived": "validation/archive/model_selection_summary_lasso_min_mse.csv"
+        },
+        {
+          "original": "validation/model_selection_pending.json",
+          "archived": "validation/archive/model_selection_pending_lasso_min_mse.json"
+        }
+      ]
+    },
+    "note": "The automatic rule selected LASSO. It remains a valid statistical result and is reported in full, but it is not the research-design rule for the primary model."
+  },
+  "validation_period": {
+    "start": "2020-01-01",
+    "end_exclusive": "2022-01-01",
+    "label_embargo": "strict_cutoff"
+  },
+  "test_used_for_selection": false,
+  "test_data_accessed": false,
+  "test_metrics_used_in_designation": false,
+  "designation_informed_by_prior_oos_review": true,
+  "clean_preregistration": false,
+  "chronology_disclosure": "The original project pre-specified Ridge. A later engineering revision introduced an automatic minimum-MSE rule that chose LASSO, and out-of-sample results were reviewed during that revision. The present designation restores the original pre-specification on economic and diagnostic grounds, but it is not a clean pre-registration because the project history includes prior OOS review. No test-period metric is used to choose the model or its alpha.",
+  "validation_fingerprint": "8e366135479d9a39cc1bc9f8497c9fa8ef77fb4fc201380b44a0f2510e93c134",
+  "config_hash": "57d05bade96129690d8d5b114866e867a5ec6db9af670e036560283670873551",
+  "approval": {
+    "approved": true,
+    "note": "Ridge primary designation: economic rationale, L2 shrinkage, highest validation Rank IC, more stable rolling coefficients than LASSO. Automatic LASSO audit archived."
+  },
+  "environment": {
+    "timestamp_utc": "2026-11-11T12:30:02Z",
+    "python_executable": "/Users/hc/anaconda3/bin/python3",
+    "packages": {
+      "python": "3.11.4",
+      "platform": "macOS-27.2-arm64-arm-64bit",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pyarrow": "18.1.0",
+      "scipy": "1.17.1",
+      "sklearn": "1.9.1",
+      "xgboost": "3.2.0",
+      "matplotlib": "3.11.2",
+      "yaml": "6.0",
+      "joblib": "1.6.0"
+    },
+    "git_commit": "not_a_git_repository"
+  },
+  "last_verification": "existing_contract_reused"
+}

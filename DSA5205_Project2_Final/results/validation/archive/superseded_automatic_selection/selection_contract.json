@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen",
+  "run_id": "sel-af11622b68bf83ce",
+  "selection_timestamp_utc": "2026-11-11T10:21:53Z",
+  "last_verified_utc": "2026-11-11T12:49:11Z",
+  "primary_model": "ridge",
+  "selection_criterion": "lowest_validation_mse",
+  "selection_rule_description": "Lowest out-of-sample validation MSE (statistical accuracy). This is the pre-specified default.",
+  "selected_model": "lasso",
+  "selected_hyperparameters": {
+    "alpha": 0.001
+  },
+  "selected_model_validation_metrics": {
+    "mse": 0.0222814904422356,
+    "rmse": 0.1492698577819234,
+    "mae": 0.0909629122621807,
+    "r2_sklearn": 0.0450594797886463,
+    "r2_oos_trainmean": 0.0495078223981494,
+    "sharpe_ratio_rf0": 0.9263117584681484,
+    "cagr": 0.461383450430652,
+    "max_drawdown": -0.3003436827755907
+  },
+  "validation_period": {
+    "start": "2020-01-01",
+    "end_exclusive": "2022-01-01",
+    "label_embargo": "strict_cutoff"
+  },
+  "validation_mse_winner": "lasso",
+  "validation_sharpe_winner": "lasso",
+  "candidate_models": [
+    "ridge",
+    "lasso",
+    "rf",
+    "xgb"
+  ],
+  "candidate_hyperparameter_configurations": 23,
+  "test_used_for_selection": false,
+  "test_data_accessed": false,
+  "approval": {
+    "approved": true,
+    "approved_by": "explicit caller approval (CLI --approve or notebook APPROVE_FINAL_SELECTION)",
+    "note": "Validation-only selection; default statistical rule fixed before test."
+  },
+  "validation_fingerprint": "af11622b68bf83ce5879a98c2f090581cb618108db3f3933dd9996b89cb7f9ec",
+  "config_hash": "7431cb4f62c604e103b3d305cb4e132e2df69a9b8eb3aa67f890ed03ad81e878",
+  "environment": {
+    "timestamp_utc": "2026-11-11T10:21:53Z",
+    "python_executable": "/Users/hc/anaconda3/bin/python3",
+    "packages": {
+      "python": "3.11.4",
+      "platform": "macOS-27.2-arm64-arm-64bit",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pyarrow": "18.1.0",
+      "scipy": "1.17.1",
+      "sklearn": "1.9.1",
+      "xgboost": "3.2.0",
+      "matplotlib": "3.11.2",
+      "yaml": "6.0",
+      "joblib": "1.6.0"
+    },
+    "git_commit": "not_a_git_repository"
+  },
+  "last_verification": "existing_contract_reused"
+}

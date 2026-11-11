@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Strategy & Gross CAGR & Net CAGR & Cost drag (pp) & Beta & Alpha \\
+\midrule
+Ridge & 47.30\% & 43.04\% & 4.26 & 1.64 & 21.73\% \\
+LASSO & 46.49\% & 42.15\% & 4.34 & 1.66 & 20.54\% \\
+Random Forest & 44.14\% & 39.98\% & 4.17 & 1.62 & 19.46\% \\
+XGBoost & 42.80\% & 38.46\% & 4.35 & 1.50 & 19.27\% \\
+B1 & 75.74\% & 73.13\% & 2.61 & 1.66 & 49.50\% \\
+B3 & 54.83\% & 51.51\% & 3.32 & 1.28 & 33.58\% \\
+SPY & 12.78\% & 12.72\% & 0.06 & 1.00 & 0.00\% \\
+QQQ & 14.87\% & 14.81\% & 0.06 & 1.22 & -0.21\% \\
+\bottomrule
+\end{tabular}
+\caption{Gross-versus-net decomposition and market-factor exposure. Cost drag is the difference between gross and net CAGR in percentage points. Alpha is annualised Jensen alpha against SPY with a zero risk-free rate.}
+\label{tab:gross_net}
+\end{table}

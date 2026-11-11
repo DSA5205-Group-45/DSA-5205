@@ -1,0 +1,42 @@
+{
+  "pass": true,
+  "issues": [],
+  "n_rows": 5760,
+  "n_decision_dates": 192,
+  "decision_start": "2010-01-29",
+  "decision_end": "2025-12-31",
+  "rows_per_date_min": 30,
+  "rows_per_date_max": 30,
+  "n_features": 15,
+  "features": [
+    "mom_21",
+    "mom_63",
+    "mom_126",
+    "mom_2_12",
+    "relative_mom_63",
+    "vol_21",
+    "vol_63",
+    "beta_252",
+    "drawdown_63",
+    "ma_ratio_50",
+    "ma_ratio_200",
+    "rsi_14",
+    "ln_adv_20",
+    "volume_ratio_21",
+    "range_hl"
+  ],
+  "target_mean": 0.016728505516165726,
+  "target_std": 0.10660410211938671,
+  "split_rows": {
+    "train": 3540,
+    "validation": 660,
+    "test": 1440,
+    "refit": 4260
+  },
+  "split_dates": {
+    "train": 118,
+    "validation": 22,
+    "test": 48,
+    "refit": 142
+  }
+}

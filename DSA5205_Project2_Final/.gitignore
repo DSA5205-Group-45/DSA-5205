@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Local environments
+.venv/
+venv/
+.env
+
+# Local archives
+_archive/
+*.zip
+
+# Large raw data and caches
+data/raw/
+data/cache/
+
+# Temporary files
+*.log

@@ -1,0 +1,54 @@
+{
+  "alpha": 1000.0,
+  "train_rows": 7080,
+  "validation_rows": 1320,
+  "refit_rows": 8520,
+  "frequency": "monthly",
+  "cost_bps": 20,
+  "test_start": "2022-01-01",
+  "test_end_exclusive": "2026-01-01",
+  "test_periods": 48,
+  "skipped_dates": [],
+  "screening": "60 momentum-only candidates for Ridge training; original 3x3 30-stock pool for R4",
+  "strategies_internal": [
+    "B1_Momentum10",
+    "B2_Momentum30",
+    "B3_MomentumDoubleSort10",
+    "R1_RidgeWeighted10",
+    "R2_RidgeFree60",
+    "R3_RidgeQuota343",
+    "R4_RidgeDoubleSort30",
+    "SPY",
+    "QQQ"
+  ],
+  "strategies_presented": [
+    "B1_Momentum10",
+    "B2_Momentum30",
+    "B3_MomentumDoubleSort10",
+    "R1_RidgeWeighted10",
+    "R2_RidgeFree60",
+    "R3_RidgeQuota343",
+    "SPY",
+    "QQQ"
+  ],
+  "internal_mapping_note": "R4_RidgeDoubleSort30 is the same economic rule as Main Ridge; retained internally only.",
+  "generated_utc": "2026-11-11T15:19:54Z",
+  "environment": {
+    "timestamp_utc": "2026-11-11T15:19:54Z",
+    "python_executable": "/Users/hc/anaconda3/bin/python",
+    "packages": {
+      "python": "3.11.4",
+      "platform": "macOS-27.2-arm64-arm-64bit",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pyarrow": "18.1.0",
+      "scipy": "1.17.1",
+      "sklearn": "1.9.1",
+      "xgboost": "3.2.0",
+      "matplotlib": "3.11.2",
+      "yaml": "6.0",
+      "joblib": "1.6.0"
+    },
+    "git_commit": "not_a_git_repository"
+  }
+}

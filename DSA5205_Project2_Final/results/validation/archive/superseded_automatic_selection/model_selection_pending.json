@@ -1,0 +1,13 @@
+{
+  "status": "awaiting_explicit_approval",
+  "selection_criterion": "lowest_validation_mse",
+  "proposed_model": "lasso",
+  "proposed_hyperparameters": {
+    "alpha": 0.001
+  },
+  "validation_mse_winner": "lasso",
+  "validation_sharpe_winner": "lasso",
+  "test_data_accessed": false,
+  "generated_utc": "2026-11-11T10:21:52Z",
+  "instruction": "Re-run with approve=True (CLI: --approve) to freeze the selection before OOS evaluation."
+}

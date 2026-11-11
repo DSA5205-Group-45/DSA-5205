@@ -1,0 +1,5 @@
+model,model_label,is_selected,hyperparameters,n_training_observations,n_decision_dates,n_features,refit_decision_start,refit_decision_end,refit_label_end_max,train_rows,validation_rows,validation_mse,random_seed,artifact,artifact_sha256
+ridge,Ridge Regression,True,"{""alpha"": 1000.0}",4260,142,15,2010-01-29,2021-10-29,2021-12-01,3540,660,0.022421789726182195,42,models/refit/ridge.joblib,05f0562894bccfaa5ff256170e0dcc2184c8fd58b796f8954d6f9dc4492129a1
+lasso,LASSO Regression,False,"{""alpha"": 0.001}",4260,142,15,2010-01-29,2021-10-29,2021-12-01,3540,660,0.022281490442235638,42,models/refit/lasso.joblib,6ea1c46302a3ce4ecb95f89b5c3241cc93b841db6be333d85237a12042f4bbaa
+rf,Random Forest,False,"{""max_depth"": 3, ""min_samples_leaf"": 25}",4260,142,15,2010-01-29,2021-10-29,2021-12-01,3540,660,0.02241229829315581,42,models/refit/rf.joblib,ca2a6d2e1ec77bdfef74ccc3244c26ab159cbe60992fc352c90a661bc9e1d2f3
+xgb,XGBoost,False,"{""learning_rate"": 0.03, ""max_depth"": 2, ""n_estimators"": 100}",4260,142,15,2010-01-29,2021-10-29,2021-12-01,3540,660,0.022641779637045004,42,models/refit/xgb.joblib,d1bee793c2123fc2a6f20100afe75599c5a56deede57825afea1f8f1a36acc3f

@@ -1,0 +1,10 @@
+{
+  "status": "superseded_auxiliary_artifact",
+  "active_workflow_uses_this": false,
+  "original_rule": "lowest_validation_mse across the four models",
+  "original_selected_model": "lasso",
+  "original_selected_hyperparameters": {"alpha": 0.001},
+  "current_primary_model": "ridge",
+  "current_primary_contract": "results/validation/primary_model_contract.json",
+  "note": "Retained for audit only. Not used to designate the primary model."
+}

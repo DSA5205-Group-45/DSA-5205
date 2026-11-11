@@ -1,0 +1,37 @@
+{
+  "generated_utc": "2026-11-11T15:19:55Z",
+  "main_decision_dates": 48,
+  "extension_decision_dates": 48,
+  "decision_dates_identical": true,
+  "benchmark_max_abs_difference": {
+    "SPY": 0.0,
+    "QQQ": 0.0
+  },
+  "benchmarks_identical": true,
+  "b3_rule_verified": true,
+  "b3_mismatched_dates": [],
+  "b3_candidate_pool": "main 3x3 screened 30-stock pool (verified date by date)",
+  "periods_per_strategy": 48,
+  "n_strategies": 8,
+  "strategies": [
+    "ridge",
+    "lasso",
+    "rf",
+    "xgb",
+    "B1_Momentum10",
+    "B3_MomentumDoubleSort10",
+    "SPY",
+    "QQQ"
+  ],
+  "return_conventions": {
+    "decision_dates": "last trading session of each month",
+    "execution": "next session open",
+    "label_horizon": "execution open to next rebalance execution open",
+    "cost_bps_per_side": 20,
+    "benchmark_cost": "one-time entry fee only",
+    "annualization": "12 monthly periods",
+    "risk_free_rate": 0.0,
+    "returns": "net of transaction costs"
+  },
+  "note": "B1/B3 come from the preserved extension driver; the four ML models and the benchmarks come from the main backtest. Alignment, benchmark equality and the B3 selection rule are verified before the panel is built."
+}

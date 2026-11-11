@@ -1,0 +1,144 @@
+{
+  "stage": "final_refit",
+  "generated_utc": "2026-11-11T15:19:51Z",
+  "frequency": "monthly",
+  "target": "target_forward_return",
+  "feature_names": [
+    "mom_21",
+    "mom_63",
+    "mom_126",
+    "mom_2_12",
+    "relative_mom_63",
+    "vol_21",
+    "vol_63",
+    "beta_252",
+    "drawdown_63",
+    "ma_ratio_50",
+    "ma_ratio_200",
+    "rsi_14",
+    "ln_adv_20",
+    "volume_ratio_21",
+    "range_hl"
+  ],
+  "n_features": 15,
+  "random_seed": 42,
+  "refit_period": {
+    "decision_start": "2010-01-29",
+    "decision_end": "2021-10-29",
+    "label_end_max": "2021-12-01",
+    "cutoff_exclusive": "2022-01-01",
+    "label_embargo": "strict_cutoff"
+  },
+  "n_training_observations": 4260,
+  "n_decision_dates": 142,
+  "selected_model": "ridge",
+  "selection_criterion": "ridge_primary_economic_designation",
+  "selection_run_id": "ridge-8e366135479d9a39",
+  "selection_timestamp_utc": "2026-11-11T12:30:02Z",
+  "test_data_accessed": false,
+  "models": {
+    "ridge": {
+      "model": "ridge",
+      "model_label": "Ridge Regression",
+      "is_selected": true,
+      "hyperparameters": "{\"alpha\": 1000.0}",
+      "n_training_observations": 4260,
+      "n_decision_dates": 142,
+      "n_features": 15,
+      "refit_decision_start": "2010-01-29",
+      "refit_decision_end": "2021-10-29",
+      "refit_label_end_max": "2021-12-01",
+      "train_rows": 3540,
+      "validation_rows": 660,
+      "validation_mse": 0.022421789726182195,
+      "random_seed": 42,
+      "artifact": "models/refit/ridge.joblib",
+      "artifact_sha256": "05f0562894bccfaa5ff256170e0dcc2184c8fd58b796f8954d6f9dc4492129a1"
+    },
+    "lasso": {
+      "model": "lasso",
+      "model_label": "LASSO Regression",
+      "is_selected": false,
+      "hyperparameters": "{\"alpha\": 0.001}",
+      "n_training_observations": 4260,
+      "n_decision_dates": 142,
+      "n_features": 15,
+      "refit_decision_start": "2010-01-29",
+      "refit_decision_end": "2021-10-29",
+      "refit_label_end_max": "2021-12-01",
+      "train_rows": 3540,
+      "validation_rows": 660,
+      "validation_mse": 0.022281490442235638,
+      "random_seed": 42,
+      "artifact": "models/refit/lasso.joblib",
+      "artifact_sha256": "6ea1c46302a3ce4ecb95f89b5c3241cc93b841db6be333d85237a12042f4bbaa"
+    },
+    "rf": {
+      "model": "rf",
+      "model_label": "Random Forest",
+      "is_selected": false,
+      "hyperparameters": "{\"max_depth\": 3, \"min_samples_leaf\": 25}",
+      "n_training_observations": 4260,
+      "n_decision_dates": 142,
+      "n_features": 15,
+      "refit_decision_start": "2010-01-29",
+      "refit_decision_end": "2021-10-29",
+      "refit_label_end_max": "2021-12-01",
+      "train_rows": 3540,
+      "validation_rows": 660,
+      "validation_mse": 0.02241229829315581,
+      "random_seed": 42,
+      "artifact": "models/refit/rf.joblib",
+      "artifact_sha256": "ca2a6d2e1ec77bdfef74ccc3244c26ab159cbe60992fc352c90a661bc9e1d2f3"
+    },
+    "xgb": {
+      "model": "xgb",
+      "model_label": "XGBoost",
+      "is_selected": false,
+      "hyperparameters": "{\"learning_rate\": 0.03, \"max_depth\": 2, \"n_estimators\": 100}",
+      "n_training_observations": 4260,
+      "n_decision_dates": 142,
+      "n_features": 15,
+      "refit_decision_start": "2010-01-29",
+      "refit_decision_end": "2021-10-29",
+      "refit_label_end_max": "2021-12-01",
+      "train_rows": 3540,
+      "validation_rows": 660,
+      "validation_mse": 0.022641779637045004,
+      "random_seed": 42,
+      "artifact": "models/refit/xgb.joblib",
+      "artifact_sha256": "d1bee793c2123fc2a6f20100afe75599c5a56deede57825afea1f8f1a36acc3f"
+    }
+  },
+  "in_sample_diagnostics": {
+    "ridge": {
+      "mse": 0.009590138476002506,
+      "mae": 0.066176048297256
+    },
+    "lasso": {
+      "mse": 0.0095784936095364,
+      "mae": 0.06626348596804515
+    },
+    "rf": {
+      "mse": 0.009132612380443566,
+      "mae": 0.06531874025937451
+    },
+    "xgb": {
+      "mse": 0.009052839810334135,
+      "mae": 0.0651777403263989
+    }
+  },
+  "package_versions": {
+    "python": "3.11.4",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "xgboost": "3.2.0",
+    "matplotlib": "3.11.2",
+    "yaml": "6.0",
+    "joblib": "1.6.0"
+  }
+}
