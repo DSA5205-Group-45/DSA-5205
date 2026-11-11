@@ -1,0 +1,13 @@
+{
+  "alpha": 1000.0,
+  "train_rows": 7080,
+  "validation_rows": 1320,
+  "refit_rows": 8520,
+  "seed": 42,
+  "frequency": "monthly",
+  "cost_bps_per_side": 20,
+  "test_start": "2022-01-01",
+  "test_end_exclusive": "2026-01-01",
+  "screening": "60 momentum-only candidates for extension Ridge training; original 30-stock double sort for R4",
+  "exploratory_after_test_inspection": true
+}
