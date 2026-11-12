@@ -1,5 +1,0 @@
-split,decision_start,decision_end,label_end_max,n_decision_dates,n_rows,n_tickers,label_embargo
-train,2010-01-29,2019-10-31,2019-12-02,118,3540,396,strict_cutoff
-validation,2020-01-31,2021-10-29,2021-12-01,22,660,256,strict_cutoff
-refit,2010-01-29,2021-10-29,2021-12-01,142,4260,417,strict_cutoff
-test,2022-01-31,2025-12-31,2026-02-02,48,1440,335,strict_cutoff
