@@ -1,0 +1,23 @@
+{
+  "n_obs": 1440,
+  "n_dates": 48,
+  "mse": 0.015056632209541818,
+  "rmse": 0.12270546935463723,
+  "mae": 0.08280166424380053,
+  "r2_sklearn": 0.01867854353883447,
+  "r2_oos_trainmean": 0.01867967619243971,
+  "directional_accuracy": 0.5291666666666667,
+  "directional_accuracy_cs": 0.54375,
+  "pearson_corr": 0.14156413557959743,
+  "spearman_rank_ic_pooled": 0.08572502044352194,
+  "mean_rank_ic": 0.061948461253244325,
+  "rank_ic_std": 0.29322330552219616,
+  "rank_ic_positive_share": 0.5625,
+  "mean_prediction": 0.020137280028192102,
+  "mean_target": 0.0169781573075277,
+  "prediction_bias": 0.0031591227206643987,
+  "refit_rows": 4260,
+  "first_entry": "2022-02-01",
+  "last_exit": "2026-02-02",
+  "historical_mean": 0.016845080788348454
+}

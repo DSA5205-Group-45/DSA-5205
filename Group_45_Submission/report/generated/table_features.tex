@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{p{2.1cm}p{2.8cm}p{5.3cm}p{3.9cm}}
+\toprule
+Group & Feature & Definition and lookback & Interpretation \\
+\midrule
+Momentum & mom\_21 & 21-session total return & Short-horizon continuation or reversal \\
+Momentum & mom\_63 & 63-session total return & Quarterly momentum \\
+Momentum & mom\_126 & 126-session total return & Semi-annual momentum \\
+Momentum & mom\_2\_12 & 12-month return, skipping the last month & Classic 12--1 momentum \\
+Momentum & relative\_mom\_63 & 63-session return minus SPY return & Relative strength \\
+Volatility/risk & vol\_21 & Annualised 21-session realised volatility & Short-term risk \\
+Volatility/risk & vol\_63 & Annualised 63-session realised volatility & Screening volatility \\
+Volatility/risk & beta\_252 & 252-session rolling beta to SPY & Systematic exposure \\
+Volatility/risk & drawdown\_63 & Price relative to 63-session high & Recent loss state \\
+Trend & ma\_ratio\_50 & Price relative to 50-session moving average & Short-term trend \\
+Trend & ma\_ratio\_200 & Price relative to 200-session moving average & Long-term trend \\
+Trend & rsi\_14 & 14-session relative strength index & Overbought/oversold \\
+Liquidity & ln\_adv\_20 & Log 20-session average dollar volume & Size and liquidity \\
+Liquidity & volume\_ratio\_21 & Volume relative to 21-session average & Abnormal activity \\
+Range & range\_hl & High--low range scaled by close & Intraday price pressure \\
+\bottomrule
+\end{tabular}
+\caption{The fifteen predictors, grouped by economic mechanism. All inputs are available at the month-end decision close.}
+\label{tab:features}
+\end{table}
